@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export const Navbar = () => {
@@ -43,9 +43,23 @@ export const Navbar = () => {
           <div className="text-2xl font-bold text-gradient">Bland</div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-gray-600"
+            className="flex flex-col justify-center items-center w-8 h-8 relative"
           >
-            <Menu size={24} />
+            <span
+              className={`block w-6 h-0.5 bg-black absolute transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-black absolute transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-black absolute transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+              }`}
+            />
           </button>
         </div>
 

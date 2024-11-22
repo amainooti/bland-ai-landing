@@ -3,7 +3,7 @@ import statsImage from "@/assets/statsImage.png";
 
 export const Stats: React.FC = () => {
   return (
-    <section className="py-20">
+    <section className="py-14">
       <div className="container mx-auto px-4">
         <div className="flex mx-auto justify-center flex-col md:flex-row gap-10 p-6 max-w-6xl">
           {/* Left Section - Stats Image */}

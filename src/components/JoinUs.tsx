@@ -14,10 +14,19 @@ export const JoinUs = () => {
             <Button
               size="lg"
               variant="default"
-              className="bg-black hover:bg-gray-900 text-white rounded-full px-4 md:px-8 w-full md:w-auto"
+              className="bg-black transition-colors group hover:bg-gray-900 text-white rounded-full px-4 md:px-8 w-full md:w-auto"
             >
-              Get early access <ArrowRight className="ml-2 h-4 w-4" />
+              Get early access{" "}
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
+
+            {/* <Button
+            size="lg"
+            className="bg-gray-900 rounded-full px-4 hover:bg-gray-800 transition-colors group"
+          >
+            Get early access
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Button> */}
           </div>
         </div>
       </div>

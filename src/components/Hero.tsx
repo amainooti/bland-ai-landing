@@ -39,7 +39,7 @@ export const Hero = () => {
 
           <Button
             size="lg"
-            className="bg-gray-900 hover:bg-gray-800 transition-colors group"
+            className="bg-gray-900 rounded-full px-4 hover:bg-gray-800 transition-colors group"
           >
             Get early access
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -59,12 +59,6 @@ export const Hero = () => {
                   />
                 ))}
               </div>
-              {/* <div className="flex flex-wrap justify-center gap-8 items-center opacity-60">
-                <img src="/placeholder.svg" alt="Google" className="h-6" />
-                <img src="/placeholder.svg" alt="Meta" className="h-6" />
-                <img src="/placeholder.svg" alt="Microsoft" className="h-6" />
-                <img src="/placeholder.svg" alt="JP Morgan" className="h-6" />
-              </div> */}
             </div>
           </div>
         </div>

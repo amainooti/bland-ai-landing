@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { HubCard } from "./hub/HubCard";
 
 const scheduleItems = [
   {
@@ -28,6 +28,17 @@ const placeholderImages = [
   "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
 ];
 
+const avatarPositions = [
+  { size: 48, radius: 35, angle: 0 },
+  { size: 48, radius: 35, angle: 90 },
+  { size: 48, radius: 35, angle: 180 },
+  { size: 48, radius: 35, angle: 270 },
+  { size: 32, radius: 25, angle: 45 },
+  { size: 32, radius: 25, angle: 135 },
+  { size: 24, radius: 20, angle: 225 },
+  { size: 24, radius: 20, angle: 315 },
+];
+
 export const Community = () => {
   const networkRef = useRef<HTMLDivElement>(null);
 
@@ -40,12 +51,10 @@ export const Community = () => {
       const svg = container.querySelector("svg");
       if (!svg) return;
 
-      // Clear existing lines
       while (svg.firstChild) {
         svg.removeChild(svg.firstChild);
       }
 
-      // Draw lines between avatars
       avatars.forEach((avatar1, i) => {
         const rect1 = avatar1.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
@@ -98,7 +107,7 @@ export const Community = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Community Support Card */}
-          <Card className="p-8 bg-gray-50">
+          <Card className="p-8 bg-[#f5f5f5]">
             <h3 className="text-xl font-semibold mb-4">
               Community Support & Discussion Forums
             </h3>
@@ -116,23 +125,36 @@ export const Community = () => {
                 className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 style={{ zIndex: 2 }}
               >
-                <div className="w-20 h-20 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-2xl text-white font-bold">B</span>
+                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center">
+                  <span className="text-2xl text-black font-bold">B</span>
                 </div>
               </div>
-              {[...Array(8)].map((_, i) => (
+              {avatarPositions.map((position, i) => (
                 <div
                   key={i}
-                  className="avatar-circle absolute w-12 h-12 rounded-full overflow-hidden animate-float"
+                  className="avatar-circle absolute rounded-full overflow-hidden animate-float"
                   style={{
-                    left: `${50 + 35 * Math.cos((i * 2 * Math.PI) / 8)}%`,
-                    top: `${50 + 35 * Math.sin((i * 2 * Math.PI) / 8)}%`,
+                    width: `${position.size}px`,
+                    height: `${position.size}px`,
+                    left: `${
+                      50 +
+                      position.radius *
+                        Math.cos((position.angle * Math.PI) / 180)
+                    }%`,
+                    top: `${
+                      50 +
+                      position.radius *
+                        Math.sin((position.angle * Math.PI) / 180)
+                    }%`,
                     animationDelay: `${i * 0.2}s`,
                     zIndex: 2,
+                    transition: "all 0.3s ease-in-out",
                   }}
                 >
                   <img
-                    src={`${placeholderImages[i]}?w=96&h=96&fit=crop&auto=format`}
+                    src={`${placeholderImages[i]}?w=${position.size * 2}&h=${
+                      position.size * 2
+                    }&fit=crop&auto=format`}
                     alt={`Community member ${i + 1}`}
                     className="w-full h-full object-cover"
                   />
@@ -161,13 +183,7 @@ export const Community = () => {
                   <p className="text-sm text-gray-600">{item.time}</p>
                 </div>
               ))}
-              <div className="mt-8">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium">Hub</span>
-                  <span className="text-sm text-gray-600">65%</span>
-                </div>
-                <Progress value={65} className="h-2" />
-              </div>
+              <HubCard />
             </div>
           </Card>
         </div>

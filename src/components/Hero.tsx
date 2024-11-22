@@ -4,6 +4,9 @@ import { ArrowRight, Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const Hero = () => {
+  const headingText = "Prepare for tests with Artificial Intelligence";
+  const words = headingText.split(" ");
+
   return (
     <section className="pt-32 pb-20 bg-white">
       <div className="container mx-auto px-4">
@@ -28,8 +31,19 @@ export const Hero = () => {
             </Badge>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-balance leading-tight text-gray-900">
-            Prepare for tests with <span>Artificial Intelligence</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-balance leading-tight text-gray-900 flex flex-wrap justify-center gap-x-3">
+            {words.map((word, index) => (
+              <span
+                key={index}
+                className="inline-block animate-fade-up opacity-0"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animationFillMode: "forwards",
+                }}
+              >
+                {word}
+              </span>
+            ))}
           </h1>
 
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

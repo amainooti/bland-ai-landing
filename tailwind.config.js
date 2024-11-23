@@ -21,6 +21,11 @@ export default {
       fontFamily: {
         nimbus: ["TAN-NIMBUS", "sans-serif"],
       },
+      extend: {
+        fontFamily: {
+          archivo: ["Archivo", "sans-serif"],
+        },
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

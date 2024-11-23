@@ -74,7 +74,7 @@ export const Features = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 animate-fade-up">
+        <div className="flex flex-col-reverse md:flex-row gap-8 animate-fade-up">
           {/* Question Display (Left Side) */}
           <div className="md:w-2/3">
             <Card className="p-8 h-full bg-gradient-to-br from-white to-gray-50">

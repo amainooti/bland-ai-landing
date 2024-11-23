@@ -11,8 +11,8 @@ export const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <div className="text-2xl font-bold font-nimbus text-gradient cursor-pointer">
-              <span>Bland</span>
+            <div className="font-nimbus text-xl">
+              <span className="cursor-pointer">Bland</span>
             </div>
             <a
               href="#"

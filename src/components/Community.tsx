@@ -126,7 +126,9 @@ export const Community = () => {
                 style={{ zIndex: 2 }}
               >
                 <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center">
-                  <span className="text-2xl text-black font-bold">B</span>
+                  <span className="text-2xl text-black font-bold font-nimbus">
+                    B
+                  </span>
                 </div>
               </div>
               {avatarPositions.map((position, i) => (

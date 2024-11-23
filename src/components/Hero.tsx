@@ -74,6 +74,12 @@ export const Hero = () => {
                 ))}
               </div>
             </div>
+            {/* <div className="flex mt-10 flex-wrap justify-center gap-8 items-center opacity-60">
+              <img src="/placeholder.svg" alt="Google" className="h-6" />
+              <img src="/placeholder.svg" alt="Meta" className="h-6" />
+              <img src="/placeholder.svg" alt="Microsoft" className="h-6" />
+              <img src="/placeholder.svg" alt="JP Morgan" className="h-6" />
+            </div> */}
           </div>
         </div>
       </div>

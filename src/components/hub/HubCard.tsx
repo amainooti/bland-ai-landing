@@ -10,7 +10,7 @@ export const HubCard = () => {
           </span>
           <ProgressIndicator />
         </div>
-      </div>
+      </div> 
     </div>
   );
 };

@@ -19,14 +19,6 @@ export const JoinUs = () => {
               Get early access{" "}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-
-            {/* <Button
-            size="lg"
-            className="bg-gray-900 rounded-full px-4 hover:bg-gray-800 transition-colors group"
-          >
-            Get early access
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button> */}
           </div>
         </div>
       </div>

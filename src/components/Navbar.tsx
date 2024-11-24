@@ -12,7 +12,7 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center gap-8">
             <div className="font-nimbus text-xl">
-              <span className="cursor-pointer">Bland</span>
+              <span className="cursor-pointer font-nimbus">Bland</span>
             </div>
             <a
               href="#"

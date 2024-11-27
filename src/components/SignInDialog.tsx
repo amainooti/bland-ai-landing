@@ -19,7 +19,7 @@ export const SignInDialog = ({ open, onOpenChange }: SignInDialogProps) => {
           <span className="sr-only">Close</span>
         </button>
 
-        <div className="px-6 py-6 flex flex-col items-center space-y-2">
+        <div className="px-6 py-8 flex flex-col items-center space-y-2">
           <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-2">
             <span className="text-white font-bold text-xl font-nimbus">B</span>
           </div>
@@ -50,7 +50,7 @@ export const SignInDialog = ({ open, onOpenChange }: SignInDialogProps) => {
             Continue with Google
           </Button>
 
-          <div className="text-xs text-center text-muted-foreground">
+          <div className="text-xs mt-20 text-center text-muted-foreground">
             By continuing, you agree to our{" "}
             <a href="#" className="underline hover:text-foreground">
               Terms of Service
@@ -62,10 +62,10 @@ export const SignInDialog = ({ open, onOpenChange }: SignInDialogProps) => {
           </div>
         </div>
 
-        <div className="px-6 py-4 bg-muted/50 text-center text-sm">
+        {/* <div className="px-6 py-4 bg-muted/50 text-center text-sm">
           Trusted by over 16,000 companies and millions of learners around the
           world
-        </div>
+        </div> */}
       </DialogContent>
     </Dialog>
   );

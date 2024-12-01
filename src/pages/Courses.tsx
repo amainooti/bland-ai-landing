@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
-import { PlayCircle, Clock, Award, BookOpen, Users, BarChart } from "lucide-react";
+import { PlayCircle, Clock, Award, BookOpen, Users } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -22,7 +22,8 @@ const courses = [
     completedLessons: 8,
     duration: "2h 30m",
     level: "Intermediate",
-    description: "Learn the core principles of UI design and best practices for creating intuitive user interfaces.",
+    description:
+      "Learn the core principles of UI design and best practices for creating intuitive user interfaces.",
     instructor: "Sarah Johnson",
     students: 1234,
     rating: 4.8,
@@ -35,18 +36,21 @@ const courses = [
     completedLessons: 4,
     duration: "3h 45m",
     level: "Advanced",
-    description: "Master advanced UI/UX design patterns and learn how to implement them in real-world projects.",
+    description:
+      "Master advanced UI/UX design patterns and learn how to implement them in real-world projects.",
     instructor: "Michael Chen",
     students: 892,
     rating: 4.9,
-  }
+  },
 ];
 
 const Courses = () => {
-  const [selectedCourse, setSelectedCourse] = useState<typeof courses[0] | null>(null);
+  const [selectedCourse, setSelectedCourse] = useState<
+    (typeof courses)[0] | null
+  >(null);
   const [sheetOpen, setSheetOpen] = useState(false);
 
-  const handleCourseClick = (course: typeof courses[0]) => {
+  const handleCourseClick = (course: (typeof courses)[0]) => {
     setSelectedCourse(course);
     setSheetOpen(true);
   };
@@ -62,8 +66,8 @@ const Courses = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.map((course) => (
-              <Card 
-                key={course.id} 
+              <Card
+                key={course.id}
                 className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
                 onClick={() => handleCourseClick(course)}
               >
@@ -72,7 +76,10 @@ const Courses = () => {
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between text-sm text-gray-500 mb-1">
-                        <span>{course.completedLessons} of {course.totalLessons} lessons</span>
+                        <span>
+                          {course.completedLessons} of {course.totalLessons}{" "}
+                          lessons
+                        </span>
                         <span>{course.progress}%</span>
                       </div>
                       <Progress value={course.progress} className="h-2" />
@@ -102,19 +109,28 @@ const Courses = () => {
               {selectedCourse && (
                 <>
                   <SheetHeader className="mb-6">
-                    <SheetTitle className="text-2xl">{selectedCourse.title}</SheetTitle>
+                    <SheetTitle className="text-2xl">
+                      {selectedCourse.title}
+                    </SheetTitle>
                     <SheetDescription className="text-base">
                       {selectedCourse.description}
                     </SheetDescription>
                   </SheetHeader>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-sm text-gray-500">Course Progress</span>
-                        <span className="text-sm font-medium">{selectedCourse.progress}%</span>
+                        <span className="text-sm text-gray-500">
+                          Course Progress
+                        </span>
+                        <span className="text-sm font-medium">
+                          {selectedCourse.progress}%
+                        </span>
                       </div>
-                      <Progress value={selectedCourse.progress} className="h-2" />
+                      <Progress
+                        value={selectedCourse.progress}
+                        className="h-2"
+                      />
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -123,19 +139,25 @@ const Courses = () => {
                           <BookOpen className="h-4 w-4 text-gray-500" />
                           <span className="text-sm text-gray-500">Lessons</span>
                         </div>
-                        <p className="font-medium">{selectedCourse.totalLessons} Lessons</p>
+                        <p className="font-medium">
+                          {selectedCourse.totalLessons} Lessons
+                        </p>
                       </div>
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <div className="flex items-center gap-2 mb-1">
                           <Clock className="h-4 w-4 text-gray-500" />
-                          <span className="text-sm text-gray-500">Duration</span>
+                          <span className="text-sm text-gray-500">
+                            Duration
+                          </span>
                         </div>
                         <p className="font-medium">{selectedCourse.duration}</p>
                       </div>
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <div className="flex items-center gap-2 mb-1">
                           <Users className="h-4 w-4 text-gray-500" />
-                          <span className="text-sm text-gray-500">Students</span>
+                          <span className="text-sm text-gray-500">
+                            Students
+                          </span>
                         </div>
                         <p className="font-medium">{selectedCourse.students}</p>
                       </div>
@@ -144,7 +166,9 @@ const Courses = () => {
                     <div className="space-y-4">
                       <h4 className="font-medium">Course Content</h4>
                       <div className="space-y-2">
-                        {Array.from({ length: selectedCourse.totalLessons }).map((_, index) => (
+                        {Array.from({
+                          length: selectedCourse.totalLessons,
+                        }).map((_, index) => (
                           <div
                             key={index}
                             className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"

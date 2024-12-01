@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { StartForFreeDialog } from "./Startforfreedialogue";
 import { SignInDialog } from "./SignInDialog";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSignInDialog, setShowSignInDialog] = useState(false);
+  const [showStartForFreeDialog, setShowStartForFreeDialog] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm border-b border-white/10">
@@ -13,8 +15,8 @@ export const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <div className="text-2xl font-nimbus font-bold text-gradient cursor-pointer">
-              <span className="font-nimbus">Bland</span>
+            <div className="text-2xl font-bold text-gradient cursor-pointer">
+              Bland
             </div>
             <a
               href="#"
@@ -43,7 +45,10 @@ export const Navbar = () => {
             >
               Sign in
             </Button>
-            <Button className="rounded-full bg-black text-white hover:bg-black/90 transition-colors px-8">
+            <Button
+              className="rounded-full bg-black text-white hover:bg-black/90 transition-colors px-8"
+              onClick={() => setShowStartForFreeDialog(true)}
+            >
               Start for free
             </Button>
           </div>
@@ -100,7 +105,10 @@ export const Navbar = () => {
               >
                 Sign in
               </Button>
-              <Button className="w-full rounded-full bg-black text-white hover:bg-black/90 transition-colors">
+              <Button
+                className="w-full rounded-full bg-black text-white hover:bg-black/90 transition-colors"
+                onClick={() => setShowStartForFreeDialog(true)}
+              >
                 Start for free
               </Button>
             </div>
@@ -110,6 +118,10 @@ export const Navbar = () => {
       <SignInDialog
         open={showSignInDialog}
         onOpenChange={setShowSignInDialog}
+      />
+      <StartForFreeDialog
+        open={showStartForFreeDialog}
+        onOpenChange={setShowStartForFreeDialog}
       />
     </nav>
   );

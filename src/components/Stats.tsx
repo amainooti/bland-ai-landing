@@ -48,6 +48,7 @@ export const Stats: React.FC = () => {
   );
 };
 
+
 interface FeatureItemProps {
   title: string;
   description: string;

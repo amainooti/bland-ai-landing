@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <div className="w-full py-16">
-      <footer className="mx-auto w-[90%] max-w-[1200px] rounded-2xl bg-black px-6 py-8">
+      <footer className="mx-auto w-[90%] max-w-[1200px] rounded-2xl bg-black px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="font-nimbus text-xl text-white">
             <span className="cursor-pointer font-nimbus">Bland</span>
